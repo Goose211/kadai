@@ -20,6 +20,7 @@ helpers do
 end
 
 get '/' do
+   @tasks = Task.all
   erb :index
 end
 
@@ -34,6 +35,11 @@ post '/search' do
 end
 
 get '/home' do
+  if current_user.nil?
+    @tasks = Task.none
+  else
+    @tasks = current_user.tasks
+  end
   erb :home
 end
 
@@ -75,6 +81,6 @@ get '/search' do
 end
 
 post '/new' do
-  current_user.tasks.create(image: params[:image],artist: params[:artist],album: params[:album],sampleurl: params[:sampleurl],comment: params[:comment])
+  Task.create(image: params[:image],artist: params[:artist],album: params[:album],sampleurl: params[:sampleurl],comment: params[:comment],user_id: current_user.id,user_name: current_user.name)
 redirect '/home'
 end

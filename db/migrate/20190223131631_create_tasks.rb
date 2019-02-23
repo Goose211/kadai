@@ -8,7 +8,8 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.string :sampleurl
       t.text :comment
       t.string :crossroads
-      t.integer :userid
+      t.integer :user_id
+      t.string :user_name
       t.timestamps null: false
     end
   end

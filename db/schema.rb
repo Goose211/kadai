@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 2019_02_23_131631) do
     t.string "sampleurl"
     t.text "comment"
     t.string "crossroads"
-    t.integer "userid"
+    t.integer "user_id"
+    t.string "user_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

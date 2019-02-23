@@ -11,3 +11,10 @@
     <% else %>
 
   <% end %>
+  </section>
+  <% @tasks.each do |t| %>
+		<p><%= t.image %></p>
+		<p><%= t.artist %></p>
+		<p><%= t.comment %></p>
+    <p><%= t.user_name %></p>
+<% end %>

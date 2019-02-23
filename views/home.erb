@@ -1,11 +1,8 @@
-<%= .find(session[:user]).name %>さんの投稿
-
-	<% @tasks.each do |task| %>
+<%= current_user.name %>さんの投稿
+ <% @tasks.each do |t| %>
 		<p><%= t.artist %></p>
 		<p><%= t.album %></p>
 		<p><%= t.track %></p>
 		<p><a href="<%= t.sampleurl %>">サンプル</p>
-		<%=CGI.escapeHTML(task.comment) %>
-		<% end %>
-	<% end %>
+	<%=CGI.escapeHTML(t.comment) %>
 <% end %>
