@@ -6,6 +6,12 @@
 	<link rel="stylesheet" href="/assets/css/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 <body>
-
+	<% @tasks.each do |task| %>
+	<p><%= task.artist %></p>
+	<p><%= task.album %></p>
+	<p><%= task.track %></p>
+	<p><a href="<%= task.music_url %">サンプル</a></p>
+	<p><%=CGI.escapeHTML(task.comment) %></p>
+	<% end %>
 </body>
 </html>
