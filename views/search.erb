@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>home</title>
+	<link rel="stylesheet" href="/assets/css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+</head>
+
+<body>
+	<h1>検索フォーム</h1>
+	<form action="/search" method="post">
+	<input type="text" name="keyword">
+	<input type="submit" value="検索">
+	</form>
+
+	<h2>検索フォーム</h2>
+    <% if !@musics.empty? %>
+			<div>
+        <% @musics.each do |music| %>
+          <div>
+            <img src="<%= music["artworkUrl100"] %>">
+            <p><%= music["artistName"] %></p>
+            <p><%= music["collectionName"] %></p>
+            <p><%= music["trackName"] %></p>
+            <a href="<%= music["previewUrl"] %>">サンプル</a>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      検索結果がありません
+    <% end %>
+</body>
