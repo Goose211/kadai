@@ -1,6 +1,6 @@
-class CreateMusiccomments < ActiveRecord::Migration[5.2]
+class CreateTasks < ActiveRecord::Migration[5.2]
   def change
-    create_table :Musiccomments do |t|
+    create_table :tasks do |t|
       t.string :artist
       t.string :album
       t.string :track

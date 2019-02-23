@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_23_102907) do
+ActiveRecord::Schema.define(version: 2019_02_23_131631) do
 
-  create_table "Musiccomments", force: :cascade do |t|
+  create_table "tasks", force: :cascade do |t|
     t.string "artist"
     t.string "album"
     t.string "track"

@@ -73,3 +73,8 @@ get '/search' do
 
   erb :search
 end
+
+post '/new' do
+  current_user.tasks.create(image: params[:image],artist: params[:artist],album: params[:album],sampleurl: params[:sampleurl],comment: params[:comment])
+redirect '/home'
+end
