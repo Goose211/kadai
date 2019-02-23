@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<title>test</title>
-	<link rel="stylesheet" href="/assets/css/index.css">
-	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-<body>
+<%= .find(session[:user]).name %>さんの投稿
+
 	<% @tasks.each do |task| %>
-	<p><%= task.artist %></p>
-	<p><%= task.album %></p>
-	<p><%= task.track %></p>
-	<p><a href="<%= task.music_url %">サンプル</a></p>
-	<p><%=CGI.escapeHTML(task.comment) %></p>
+		<p><%= t.artist %></p>
+		<p><%= t.album %></p>
+		<p><%= t.track %></p>
+		<p><a href="<%= t.sampleurl %>">サンプル</p>
+		<%=CGI.escapeHTML(task.comment) %>
+		<% end %>
 	<% end %>
-</body>
-</html>
+<% end %>
