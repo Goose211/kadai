@@ -1,36 +1,13 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <title>top</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  </head>
-  <body>
-   <% unless session[:user] %>
-    <nav>
-    <a href="/">music SNS!!</a>
-    <a href="/signup">新規登録</a>
-  </nav>
-
-	  <h1>MUSIC SNS!!!</h1>
+<section class="first-view center-vertical">
+<h1>MUSIC SNS!!!</h1>
+<% unless session[:user] %>
     <div>
-	    <form action="/signin" method="post">
-        <div>
-          <input name="name" placeholder="ユーザー名"><br>
-          <input type="password" name="password" placeholder="パスワード"><br>
-          <input type="submit" value="ログイン"><br>
-        </div>
+	    <form action="/signin" method="POST" class="form-inline">
+        <input name="name" placeholder="ユーザー名"><br>
+        <input type="password" name="password" placeholder="パスワード"><br>
+        <input type="submit" value="ログイン"><br>
       </form>
     </div>
-
     <% else %>
-      <a href="/">music SNS!!</a>
-      <a href="/home">home</a>
-      <a href="/search">search</a>
-      <a href="/signout">ログアウト</a>
-    <% end %>
-    </div>
-  </body>
-</html>
+
+  <% end %>

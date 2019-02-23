@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<title>home</title>
-	<link rel="stylesheet" href="/assets/css/index.css">
-	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-</head>
-
 <body>
+<section class="center-vertical">
 	<h1>検索フォーム</h1>
-	<form action="/search" method="post">
+	<form action="/search" method="get">
 	<input type="text" name="keyword">
 	<input type="submit" value="検索">
 	</form>
@@ -24,6 +16,8 @@
             <p><%= music["collectionName"] %></p>
             <p><%= music["trackName"] %></p>
             <a href="<%= music["previewUrl"] %>">サンプル</a>
+
+
           </div>
         <% end %>
       </div>

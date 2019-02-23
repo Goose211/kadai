@@ -28,7 +28,7 @@ get '/signup' do
   erb :sign_up
 end
 
-get '/search' do
+post '/search' do
 @musics = []
   erb :search
 end
