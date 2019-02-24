@@ -10,9 +10,6 @@ require 'open-uri'
 require 'net/http'
 require 'json'
 
-require './image_uploader.rb'
-
-
 enable :sessions
 
 helpers do
@@ -22,7 +19,7 @@ helpers do
 end
 
 get '/' do
-   @tasks = Task.all
+   @tasks = Task.all.order("created_at desc")
   erb :index
 end
 
@@ -63,8 +60,8 @@ post '/signup' do
     session[:user] = @user.id
   end
 
-  if params[:file]
-    image_uploader(params[:file])
+  if params[:img]
+    image_uploader(params[:img])
   end
 
   redirect '/'

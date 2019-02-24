@@ -2,16 +2,15 @@
 <section class="center-vertical">
 	<h1>検索フォーム</h1>
 	<form action="/search" method="get">
-	<input type="text" name="keyword">
+	<input type="text" name="keyword" placeholder="アーティスト名">
 	<input type="submit" value="検索">
 	</form>
 
-	<h2>検索フォーム</h2>
+	<h2>検索結果</h2>
     <% if !@musics.empty? %>
-			<div>
+      <div class="center-hrizontal">
         <% @musics.each do |music| %>
-          <div>
-            <div class="post center-vertical">
+          <div class="post center-vertical">
             <img src="<%= music["artworkUrl100"] %>">
             <p><%= music["artistName"] %></p>
             <p><%= music["collectionName"] %></p>

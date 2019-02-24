@@ -16,6 +16,8 @@ gem 'bcrypt'
 
 gem 'sqlite3','~> 1.3.6'
 
+gem 'cloudinary'
+gem 'dotenv'
 
 group :projuction do
 gem 'pg' , '~>0.18'
