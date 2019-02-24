@@ -1,8 +1,19 @@
-<%= current_user.name %>さんの投稿
+<section class="center-vertical">
+	<%= current_user.name %>さんの投稿
+
  <% @tasks.each do |t| %>
+		<div class="post center-vertical">
+		<img src="<%= t.image %>">
 		<p><%= t.artist %></p>
 		<p><%= t.album %></p>
 		<p><%= t.track %></p>
-		<p><a href="<%= t.sampleurl %>">サンプル</p>
-	<%=CGI.escapeHTML(t.comment) %>
-<% end %>
+		<p><a href="<%= t.sampleurl %>">サンプル</a></p>
+		<p><%=CGI.escapeHTML(t.comment) %></p>
+
+		<form action="/delete/<%= t.id%>" method="post">
+			<input type="submit" value="削除">
+		</form>
+
+		</div>
+	<% end %>
+	</section>

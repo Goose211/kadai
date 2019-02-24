@@ -84,3 +84,8 @@ post '/new' do
   Task.create(image: params[:image],artist: params[:artist],album: params[:album],sampleurl: params[:sampleurl],comment: params[:comment],user_id: current_user.id,user_name: current_user.name)
 redirect '/home'
 end
+
+post '/delete/:id' do
+  Task.find(params[:id]).delete
+  redirect :home
+end
