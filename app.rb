@@ -99,5 +99,5 @@ post '/edit/:id' do
   Task.find(params[:id])
   comment = params[:comment]
   task.save
-  redirect "/edit/"
+  redirect "home"
 end
