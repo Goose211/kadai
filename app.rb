@@ -4,6 +4,7 @@ require 'sinatra/reloader' if development?
 
 require 'sinatra/activerecord'
 require './models'
+require './image_uploader.rb'
 
 #検索機能実装
 require 'open-uri'
@@ -54,14 +55,14 @@ post '/signup' do
   @user = User.create(name:params[:name],
     password:params[:password],
   password_confirmation:params[:password_confirmation],
-  img: params[:file])
+  img: "")
+
+if params[:img]
+    image_uploader(params[:img])
+  end
 
   if @user.persisted?
     session[:user] = @user.id
-  end
-
-  if params[:img]
-    image_uploader(params[:img])
   end
 
   redirect '/'
