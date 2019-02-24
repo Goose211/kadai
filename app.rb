@@ -58,7 +58,7 @@ post '/signup' do
   img: "")
 
 if params[:img]
-    image_uploader(params[:img])
+    image_upload(params[:img])
   end
 
   if @user.persisted?
