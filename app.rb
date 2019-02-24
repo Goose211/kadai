@@ -90,14 +90,14 @@ post '/delete/:id' do
   redirect :home
 end
 
-get '/edit' do
-  @tasks = Task.all
+get '/edit/:id' do
+  @task = Task.find(params[:id])
   erb :edit
 end
 
-post '/edit/:id' do
-  Task.find(params[:id])
-  comment = params[:comment]
+post '/edit/:id/update' do
+  task = Task.find(params[:id])
+  task.comment = params[:comment]
   task.save
-  redirect "home"
+  redirect "/home"
 end

@@ -14,13 +14,12 @@
 </section>
   <section class="center-vertical">
     <h1>最近の投稿</h1>
-        <% @tasks.each do |t| %>
-          <div class="post center-vertical">
-		      <img src="<%= t.image %>">
-		      <p><%= t.artist %></p>
-          <p><%= t.comment %></p>
-          <p><%= t.user_name %></p>
-        </div>
+    <% @tasks.each do |t| %>
+      <div class="post center-vertical">
+		    <img src="<%= t.image %>">
+		    <p><%= t.artist %></p>
+        <p><%= t.comment %></p>
+        <p><%= t.user_name %></p>
       </div>
+    <% end %>
   </section>
-<% end %>

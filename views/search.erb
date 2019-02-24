@@ -11,6 +11,7 @@
 			<div>
         <% @musics.each do |music| %>
           <div>
+            <div class="post center-vertical">
             <img src="<%= music["artworkUrl100"] %>">
             <p><%= music["artistName"] %></p>
             <p><%= music["collectionName"] %></p>
