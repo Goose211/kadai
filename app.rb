@@ -89,9 +89,9 @@ post '/new' do
 redirect '/home'
 end
 
-post '/delete/:id' do
+get '/delete/:id' do
   Task.find(params[:id]).delete
-  redirect :home
+  redirect '/home'
 end
 
 get '/edit/:id' do
@@ -103,5 +103,5 @@ post '/edit/:id/update' do
   task = Task.find(params[:id])
   task.comment = params[:comment]
   task.save
-  redirect "/home"
+  redirect '/home'
 end

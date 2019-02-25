@@ -1,7 +1,7 @@
 <section class="first-view center-vertical">
 <h1>MUSIC SNS!!!</h1>
+<div>
 <% unless session[:user] %>
-    <div>
 	    <form action="/signin" method="POST" class="form-inline">
         <input name="name" placeholder="ユーザー名"><br>
         <input type="password" name="password" placeholder="パスワード"><br>
